@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="@style/Theme.Leanback"/>
+
+    <style name="ScrollingTitle" parent="Widget.Leanback.ImageCardView.TitleStyle">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <style name="ScrollingTitleImageCard" parent="@style/AppTheme">
+        <item name="imageCardViewTitleStyle">@style/ScrollingTitle</item>
+    </style>
+
+
 </resources>

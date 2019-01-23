@@ -15,12 +15,12 @@
 package com.github.sindrebn.leanbackmarqueedemo
 
 import android.graphics.drawable.Drawable
-import androidx.leanback.widget.ImageCardView
-import androidx.leanback.widget.Presenter
-import androidx.core.content.ContextCompat
 import android.util.Log
 import android.view.ViewGroup
-
+import androidx.appcompat.view.ContextThemeWrapper
+import androidx.core.content.ContextCompat
+import androidx.leanback.widget.ImageCardView
+import androidx.leanback.widget.Presenter
 import com.bumptech.glide.Glide
 import kotlin.properties.Delegates
 
@@ -40,7 +40,7 @@ class CardPresenter : Presenter() {
         sSelectedBackgroundColor = ContextCompat.getColor(parent.context, R.color.selected_background)
         mDefaultCardImage = ContextCompat.getDrawable(parent.context, R.drawable.movie)
 
-        val cardView = object : ImageCardView(parent.context) {
+        val cardView = object : ImageCardView(ContextThemeWrapper(parent.context, R.style.ScrollingTitleImageCard)) {
             override fun setSelected(selected: Boolean) {
                 updateCardBackgroundColor(this, selected)
                 super.setSelected(selected)
